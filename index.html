@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognition | AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Digit Classification</h1>
+            <p>Draw a digit on the blackboard OR upload an image.</p>
+        </header>
+
+        <section class="main-interface">
+            <div class="input-panel">
+                <div class="tabs">
+                    <button class="tab-btn active" id="tabDraw">Draw Digit</button>
+                    <button class="tab-btn" id="tabUpload">Upload Photo</button>
+                </div>
+
+                <div class="tab-content active" id="contentDraw">
+                    <div class="canvas-wrapper">
+                        <canvas id="digitCanvas" width="280" height="280"></canvas>
+                        <span class="label">Black Board</span>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="contentUpload">
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="imageUpload" accept="image/*" hidden>
+                        <div class="upload-placeholder">
+                            <span class="upload-icon">📁</span>
+                            <span class="upload-text">Click here to upload an image of a digit</span>
+                        </div>
+                        <img id="imagePreview" class="image-preview" src="" alt="Preview">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="clearBtn" class="secondary">Clear</button>
+                    <button id="predictBtn" class="primary">Analyze Digit</button>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <div class="prediction-box">
+                    <h3>Classification</h3>
+                    <div id="predictionResult" class="digit">-</div>
+                </div>
+
+                <div class="probabilities-box">
+                    <h3>Probabilities (0-9)</h3>
+                    <div id="probabilitiesSection" class="prob-list">
+                        <!-- Bars injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

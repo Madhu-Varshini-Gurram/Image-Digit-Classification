@@ -1,0 +1,9 @@
+**/data/
+digit_clf.pth
+__pycache__/
+.ipynb_checkpoints/
+.vscode/
+.env
+*.pyc
+sample_digit_*.png
+data/
